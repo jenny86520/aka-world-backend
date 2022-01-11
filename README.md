@@ -25,9 +25,38 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+It's back-end For [AkaWorld](https://aka-world.vercel.app/).
 
 ## Installation
+* Register and download [MongoDB](https://www.mongodb.com/), then create a DB user:
+1. 指定 DB 存放位置並啟動(預設：[http://localhost:27017/](http://localhost:27017/))
+```bash
+C:\Program Files\MongoDB\Server\5.0\bin> mongod --dbpath "C:\mongodb\data\aka-world"
+```
+2. 連線至 DB server
+```bash
+C:\Program Files\MongoDB\Server\5.0\bin> mongo --host localhost --port 27017
+```
+3. 連線至 DB
+```bash
+C:\Program Files\MongoDB\Server\5.0\bin> use akaWorld
+```
+4. 設定使用者
+```bash
+C:\Program Files\MongoDB\Server\5.0\bin> db.createUser({
+  user: "aka",
+  pwd: "aka",
+  roles: [{ role: "userAdmin", db: "akaWorld"}]
+})
+```
+5. 重新啟動 DB server
+```bash
+C:\Program Files\MongoDB\Server\5.0\bin> mongod --dbpath "C:\mongodb\data\aka-world"
+```
+> References: [如何在 Windows 環境安裝及設定 MongoDB](https://blog.yowko.com/windows-mongodb)
+> MongoDB Manager: [Robo 3T](https://robomongo.org/download)
 
+* npm install
 ```bash
 $ npm install
 ```
